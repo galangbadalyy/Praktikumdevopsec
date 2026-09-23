@@ -496,11 +496,11 @@
               "threats": [
                 {
                   "id": "3648159f-f269-45ed-807b-9be7674261f2",
-                  "title": "New STRIDE threat",
+                  "title": "Peningkatan Hak Akses",
                   "status": "Open",
                   "severity": "High",
                   "type": "Elevation of privilege",
-                  "description": "Provide a description for this threat",
+                  "description": "Pengguna biasa (Customer) mengeksploitasi celah IDOR untuk mengakses",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -514,7 +514,7 @@
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 1
+                "elevationOfPrivilege": 2
               }
             }
           },
@@ -638,11 +638,11 @@
               "threats": [
                 {
                   "id": "c13182bc-2416-4b8c-b3b5-d862d0f1809e",
-                  "title": "New STRIDE threat",
+                  "title": "Penyangkalan Transaksi",
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Repudiation",
-                  "description": "Provide a description for this threat",
+                  "description": "User menyangkal melakukan transaksi pembelian karena tidak adanya audit log yang mencatat aktivitas.",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -653,7 +653,7 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 1,
+                "repudiation": 2,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
@@ -780,11 +780,11 @@
               "threats": [
                 {
                   "id": "26545ffe-8d97-47ba-88cd-b94d0e35e2ac",
-                  "title": "New STRIDE threat",
+                  "title": "Manipulasi Pembayaran",
                   "status": "Open",
                   "severity": "Critical",
                   "type": "Tampering",
-                  "description": "Provide a description for this threat",
+                  "description": "Memanipulasi parameter harga/nominal pembayaran pada Payment Request dari luar DMZ.",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -794,12 +794,19 @@
               ],
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 1,
+                "tampering": 2,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -922,11 +929,11 @@
               "threats": [
                 {
                   "id": "4b46d14b-f176-4bd9-92e5-e0a717e98861",
-                  "title": "New STRIDE threat",
+                  "title": "Pemalsuan TokenJWT",
                   "status": "Open",
                   "severity": "High",
                   "type": "Spoofing",
-                  "description": "Provide a description for this threat",
+                  "description": "Penyerang memalsukan identitas token JWTuntuk menyamar sebagai user sah.",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -935,11 +942,11 @@
                 },
                 {
                   "id": "9231e770-ff8b-4182-a989-f8e379cfc5ac",
-                  "title": "New STRIDE threat",
+                  "title": "Modifikasi Request ",
                   "status": "Open",
                   "severity": "High",
                   "type": "Tampering",
-                  "description": "Provide a description for this threat",
+                  "description": "Modifikasi request body pada payload saat transit untuk mengubah data transaksi.",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -948,37 +955,24 @@
                 },
                 {
                   "id": "c53ddbe4-af20-4466-97cd-3fe1155854e2",
-                  "title": "New STRIDE threat",
+                  "title": "Serangan DoS",
                   "status": "Open",
                   "severity": "High",
                   "type": "Denial of service",
-                  "description": "Provide a description for this threat",
+                  "description": "Serangan banjir traffic (DDoS) ke endpoint login untuk melumpuhkan server.",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 3,
                   "score": ""
-                },
-                {
-                  "id": "ae3e302c-40b6-41e7-a5d5-fadbddb102fb",
-                  "title": "New STRIDE threat",
-                  "status": "Open",
-                  "severity": "TBD",
-                  "type": "Repudiation",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": true,
-                  "number": 4,
-                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
-                "tampering": 1,
+                "spoofing": 3,
+                "tampering": 3,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 1,
+                "denialOfService": 4,
                 "elevationOfPrivilege": 0
               }
             }
@@ -1109,11 +1103,11 @@
               "threats": [
                 {
                   "id": "17fb1dd1-e390-4f02-a13c-e337b283783e",
-                  "title": "New STRIDE threat",
+                  "title": "Kebocoran Informasi DB",
                   "status": "Open",
                   "severity": "High",
                   "type": "Information disclosure",
-                  "description": "Provide a description for this threat",
+                  "description": "Kebocoran data sensitif (password hash/ data pribadi) akibat pesan errorSQL yang terlalu detail.",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1124,7 +1118,7 @@
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 2,
                 "denialOfService": 0
               }
             }
@@ -1255,11 +1249,11 @@
               "threats": [
                 {
                   "id": "01fb1fcf-ec36-4946-86b9-ac20a3712cd7",
-                  "title": "New STRIDE threat",
+                  "title": "Pencurian Token Sesi",
                   "status": "Open",
                   "severity": "High",
                   "type": "Information disclosure",
-                  "description": "Provide a description for this threat",
+                  "description": "Pencurian token sesi (session hijacking) akibat tidak diterapkannya enkripsi transit yang aman.",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1270,7 +1264,7 @@
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 2,
                 "denialOfService": 0
               }
             }
@@ -1357,7 +1351,12 @@
               "threats": [],
               "trustBoundaryIds": [
                 "205517b0-4dc2-405a-9e7e-6136e13c3848"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "HTTPS Login"
@@ -1370,7 +1369,8 @@
             "target": {
               "cell": "4a5c25e7-f6a6-4e74-8cd3-27083adc8e5b",
               "port": "c1fbd54b-7402-4018-8a15-9e18512398fa"
-            }
+            },
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -1626,6 +1626,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Dosen",
-    "threatTop": 9
+    "threatTop": 10
   }
 }
